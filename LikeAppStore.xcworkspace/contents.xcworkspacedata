@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ivicapetrsoric/Documents/backup/personal/Projects/LikeAppStore/LikeAppStore/Controller/Apps/AppsPageController.swift">
+   </FileRef>
+   <FileRef
       location = "group:LikeAppStore.xcodeproj">
    </FileRef>
    <FileRef
