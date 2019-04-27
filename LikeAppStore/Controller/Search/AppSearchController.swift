@@ -9,7 +9,9 @@
 import UIKit
 import SDWebImage
 
-class AppSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+import UIKit
+
+class AppSearchController: BaseListController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     private let cellId = "cellId"
     private var appResults = [Result]()
@@ -62,7 +64,6 @@ class AppSearchController: UICollectionViewController, UICollectionViewDelegateF
                 }
             }
         })
-
     }
     
     private func fetchITunesApps() {
@@ -92,14 +93,6 @@ class AppSearchController: UICollectionViewController, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 350)
-    }
-    
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
 }
