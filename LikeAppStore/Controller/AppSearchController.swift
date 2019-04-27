@@ -18,6 +18,31 @@ class AppSearchController: UICollectionViewController, UICollectionViewDelegateF
         collectionView.backgroundColor = .white
         
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
+        
+        fetchITunesApps()
+    }
+    
+    private func fetchITunesApps() {
+        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            if let err = err {
+                print("Failed to fetch apps ", err.localizedDescription)
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
+                
+                searchResult.results.forEach({print($0.trackName)})
+            } catch let err {
+                print("Failed to decode json ", err.localizedDescription)
+            }
+            
+        }.resume()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

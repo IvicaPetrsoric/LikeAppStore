@@ -16,6 +16,7 @@
 		6B118303227379CE0030CC30 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B118302227379CE0030CC30 /* SearchResultCell.swift */; };
 		6B11830522737E460030CC30 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11830422737E460030CC30 /* UIView+Layout.swift */; };
 		6B118308227382960030CC30 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B118307227382960030CC30 /* VerticalStackView.swift */; };
+		6B11830B2274577D0030CC30 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11830A2274577D0030CC30 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6B118302227379CE0030CC30 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		6B11830422737E460030CC30 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		6B118307227382960030CC30 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		6B11830A2274577D0030CC30 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				6B1182E922735B4B0030CC30 /* AppDelegate.swift */,
+				6B118309227457540030CC30 /* Model */,
 				6B11830622737E520030CC30 /* Helpers */,
-				6B118301227379C00030CC30 /* View */,
+				6B118301227379C00030CC30 /* Views */,
 				6B11830022736BEC0030CC30 /* Controller */,
 				6B1182FB22735BB60030CC30 /* Supporting Files */,
 				6B1182F522735B4D0030CC30 /* Info.plist */,
@@ -91,12 +94,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		6B118301227379C00030CC30 /* View */ = {
+		6B118301227379C00030CC30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				6B118302227379CE0030CC30 /* SearchResultCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6B11830622737E520030CC30 /* Helpers */ = {
@@ -106,6 +109,14 @@
 				6B118307227382960030CC30 /* VerticalStackView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6B118309227457540030CC30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B11830A2274577D0030CC30 /* SearchResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B1182EA22735B4B0030CC30 /* AppDelegate.swift in Sources */,
+				6B11830B2274577D0030CC30 /* SearchResult.swift in Sources */,
 				6B118308227382960030CC30 /* VerticalStackView.swift in Sources */,
 				6B1182FF22736B9B0030CC30 /* AppSearchController.swift in Sources */,
 				6B118303227379CE0030CC30 /* SearchResultCell.swift in Sources */,
