@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66D722CB9B3ED0B8300B9B5C /* Pods_LikeAppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CEB71A434457B0D8D53242 /* Pods_LikeAppStore.framework */; };
 		6B1182EA22735B4B0030CC30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1182E922735B4B0030CC30 /* AppDelegate.swift */; };
 		6B1182EF22735B4B0030CC30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B1182ED22735B4B0030CC30 /* Main.storyboard */; };
 		6B1182F122735B4D0030CC30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1182F022735B4D0030CC30 /* Assets.xcassets */; };
@@ -34,6 +35,9 @@
 		6B118307227382960030CC30 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		6B11830A2274577D0030CC30 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		6B11830D22745B700030CC30 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		82CEB71A434457B0D8D53242 /* Pods_LikeAppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LikeAppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E2F0A5868E369A63F5BD5C /* Pods-LikeAppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LikeAppStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore.debug.xcconfig"; sourceTree = "<group>"; };
+		C1C2F27D9664451AA8912B1E /* Pods-LikeAppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LikeAppStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D722CB9B3ED0B8300B9B5C /* Pods_LikeAppStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DD7B4C8ACA34DAE9E0A56A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82CEB71A434457B0D8D53242 /* Pods_LikeAppStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B1182DD22735B4B0030CC30 = {
 			isa = PBXGroup;
 			children = (
 				6B1182E822735B4B0030CC30 /* LikeAppStore */,
 				6B1182E722735B4B0030CC30 /* Products */,
+				7D0E5D578D0BA010047483C9 /* Pods */,
+				3DD7B4C8ACA34DAE9E0A56A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,9 +84,9 @@
 				6B1182E922735B4B0030CC30 /* AppDelegate.swift */,
 				6B11830C22745B640030CC30 /* Service */,
 				6B118309227457540030CC30 /* Model */,
-				6B11830622737E520030CC30 /* Helpers */,
 				6B118301227379C00030CC30 /* Views */,
 				6B11830022736BEC0030CC30 /* Controller */,
+				6B11830622737E520030CC30 /* Helpers */,
 				6B1182FB22735BB60030CC30 /* Supporting Files */,
 				6B1182F522735B4D0030CC30 /* Info.plist */,
 			);
@@ -130,6 +145,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		7D0E5D578D0BA010047483C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96E2F0A5868E369A63F5BD5C /* Pods-LikeAppStore.debug.xcconfig */,
+				C1C2F27D9664451AA8912B1E /* Pods-LikeAppStore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B1182F822735B4D0030CC30 /* Build configuration list for PBXNativeTarget "LikeAppStore" */;
 			buildPhases = (
+				71436470FDE6ED939380C0F6 /* [CP] Check Pods Manifest.lock */,
 				6B1182E222735B4B0030CC30 /* Sources */,
 				6B1182E322735B4B0030CC30 /* Frameworks */,
 				6B1182E422735B4B0030CC30 /* Resources */,
+				804A4C3741D86A4C1AEC7570 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +221,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71436470FDE6ED939380C0F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LikeAppStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		804A4C3741D86A4C1AEC7570 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B1182E222735B4B0030CC30 /* Sources */ = {
@@ -352,6 +425,7 @@
 		};
 		6B1182F922735B4D0030CC30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96E2F0A5868E369A63F5BD5C /* Pods-LikeAppStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -370,6 +444,7 @@
 		};
 		6B1182FA22735B4D0030CC30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1C2F27D9664451AA8912B1E /* Pods-LikeAppStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
