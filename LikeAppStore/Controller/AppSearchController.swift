@@ -11,6 +11,7 @@ import UIKit
 class AppSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let cellId = "cellId"
+    private var appResults = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,34 +24,29 @@ class AppSearchController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     private func fetchITunesApps() {
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+        Service.shared.fetchApps { (results, err) in
             if let err = err {
-                print("Failed to fetch apps ", err.localizedDescription)
+                print("Failed to fetch apps: ", err.localizedDescription)
                 return
             }
             
-            guard let data = data else { return }
-            
-            do {
-                let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-                
-                searchResult.results.forEach({print($0.trackName)})
-            } catch let err {
-                print("Failed to decode json ", err.localizedDescription)
+            self.appResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
-            
-        }.resume()
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return appResults.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
+        let appResult = appResults[indexPath.item]
+        cell.nameLabel.text = appResult.trackName
+        cell.categoryLabel.text = appResult.primaryGenreName
+        cell.ratingLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
         return cell
     }
     

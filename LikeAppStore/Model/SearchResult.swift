@@ -16,4 +16,5 @@ struct SearchResult: Codable {
 struct Result: Codable {
     let trackName: String
     let primaryGenreName: String
+    var averageUserRating: Float?
 }
