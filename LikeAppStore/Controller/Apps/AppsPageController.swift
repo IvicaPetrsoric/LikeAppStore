@@ -19,6 +19,19 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         collectionView.backgroundColor = .white
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        fetchData()
+    }
+    
+    private func fetchData() {
+        Service.shared.fetchGames { (appGroup, err) in
+            if let err = err {
+                print("failed to fetch games: ", err.localizedDescription)
+                return
+            }
+            
+            print(appGroup?.feed.results)
+        }
     }
     
     // header

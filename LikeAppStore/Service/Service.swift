@@ -34,8 +34,30 @@ class Service {
                 print("Failed to decode json ", jsonError.localizedDescription)
                 completion([], jsonError)
             }
+        }.resume()
+    }
+    
+    func fetchGames(completion: @escaping(AppGroup?, Error?) -> ()) {
+        guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-apps-we-love/all/50/explicit.json") else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            if let err = err {
+                print("Failed to fetch app groups: ", err.localizedDescription)
+                completion(nil, err)
+                return
+            }
             
-            }.resume()
+            guard let data = data else { return }
+            
+            do {
+                let appGroup = try JSONDecoder().decode(AppGroup.self, from: data)
+                completion(appGroup, nil)
+            } catch let jsonError {
+                print("Failed to decode: ", jsonError.localizedDescription)
+                completion(nil, jsonError)
+            }
+            
+        }.resume()
     }
     
 }
