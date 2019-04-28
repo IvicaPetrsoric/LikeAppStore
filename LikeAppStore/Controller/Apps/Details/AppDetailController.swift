@@ -8,12 +8,37 @@
 
 import UIKit
 
-class AppDetailController: BaseListController {
+class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayout {
+    
+    var appId: String? {
+        didSet {
+            let urlString = "https://itunes.apple.com/lookup?id=\(appId ?? "")"
+            Service.shared.fetchGenericJSONData(urlString: urlString) { (resutl: SearchResult?, err) in
+                
+            }
+        }
+    }
+    
+    private let cellId = "cellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .white
+        collectionView.register(AppDetailsCell.self, forCellWithReuseIdentifier: cellId)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppDetailsCell
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 300)
     }
     
 }
