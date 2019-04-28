@@ -24,10 +24,10 @@
 		6B11831B2274A3640030CC30 /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11831A2274A3640030CC30 /* AppsHorizontalController.swift */; };
 		6B11831D2274ABD10030CC30 /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11831C2274ABD10030CC30 /* AppRowCell.swift */; };
 		6B11831F2274AC530030CC30 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11831E2274AC530030CC30 /* Extensions.swift */; };
-		6B1183212274B31D0030CC30 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1183202274B31D0030CC30 /* AppsPageController.swift */; };
 		6B1183232274B3960030CC30 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1183222274B3960030CC30 /* AppsPageHeader.swift */; };
 		6B1183252274B4E70030CC30 /* AppsHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1183242274B4E70030CC30 /* AppsHeaderHorizontalController.swift */; };
 		6B1183272274B5CC0030CC30 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1183262274B5CC0030CC30 /* AppsHeaderCell.swift */; };
+		6B11832D2275E8510030CC30 /* AppsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11832C2275E8510030CC30 /* AppsPageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,10 +49,10 @@
 		6B11831A2274A3640030CC30 /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
 		6B11831C2274ABD10030CC30 /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
 		6B11831E2274AC530030CC30 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		6B1183202274B31D0030CC30 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppsPageController.swift; path = /Users/ivicapetrsoric/Documents/backup/personal/Projects/LikeAppStore/LikeAppStore/Controller/Apps/AppsPageController.swift; sourceTree = "<absolute>"; };
 		6B1183222274B3960030CC30 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
 		6B1183242274B4E70030CC30 /* AppsHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalController.swift; sourceTree = "<group>"; };
 		6B1183262274B5CC0030CC30 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
+		6B11832C2275E8510030CC30 /* AppsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageController.swift; sourceTree = "<group>"; };
 		82CEB71A434457B0D8D53242 /* Pods_LikeAppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LikeAppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E2F0A5868E369A63F5BD5C /* Pods-LikeAppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LikeAppStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore.debug.xcconfig"; sourceTree = "<group>"; };
 		C1C2F27D9664451AA8912B1E /* Pods-LikeAppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LikeAppStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		6B11830F22749F6B0030CC30 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				6B1183202274B31D0030CC30 /* AppsPageController.swift */,
+				6B11832C2275E8510030CC30 /* AppsPageController.swift */,
 				6B11831A2274A3640030CC30 /* AppsHorizontalController.swift */,
 				6B1183242274B4E70030CC30 /* AppsHeaderHorizontalController.swift */,
 			);
@@ -325,9 +325,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B11832D2275E8510030CC30 /* AppsPageController.swift in Sources */,
 				6B1183162274A0BF0030CC30 /* BaseListController.swift in Sources */,
 				6B1182EA22735B4B0030CC30 /* AppDelegate.swift in Sources */,
-				6B1183212274B31D0030CC30 /* AppsPageController.swift in Sources */,
 				6B1183232274B3960030CC30 /* AppsPageHeader.swift in Sources */,
 				6B1183192274A1910030CC30 /* AppsGroupCell.swift in Sources */,
 				6B11830E22745B700030CC30 /* Service.swift in Sources */,
