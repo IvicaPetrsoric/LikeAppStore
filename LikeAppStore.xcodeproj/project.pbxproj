@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				6B1183172274A17F0030CC30 /* Apps */,
-				6B118302227379CE0030CC30 /* SearchResultCell.swift */,
+				6B1183302275F38C0030CC30 /* Search */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +197,14 @@
 				6B1183262274B5CC0030CC30 /* AppsHeaderCell.swift */,
 			);
 			path = Apps;
+			sourceTree = "<group>";
+		};
+		6B1183302275F38C0030CC30 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6B118302227379CE0030CC30 /* SearchResultCell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		7D0E5D578D0BA010047483C9 /* Pods */ = {

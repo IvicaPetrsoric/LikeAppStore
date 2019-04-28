@@ -37,9 +37,18 @@ class Service {
         }.resume()
     }
     
-    func fetchGames(completion: @escaping(AppGroup?, Error?) -> ()) {
-//        let urlString = "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love/all/50/explicit.json"
+    func fetchTopGrossing(completion: @escaping(AppGroup?, Error?) -> ()) {
         let urlString = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-grossing/all/50/explicit.json"
+        fetchAppGroup(urlString: urlString, completion: completion)
+    }
+    
+    func fetchGames(completion: @escaping(AppGroup?, Error?) -> ()) {
+        let urlString = "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love/all/50/explicit.json"
+        fetchAppGroup(urlString: urlString, completion: completion)
+    }
+
+    
+    func fetchAppGroup(urlString: String, completion: @escaping(AppGroup?, Error?) -> Void) {
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
@@ -58,7 +67,6 @@ class Service {
                 print("Failed to decode: ", jsonError.localizedDescription)
                 completion(nil, jsonError)
             }
-            
         }.resume()
     }
     
