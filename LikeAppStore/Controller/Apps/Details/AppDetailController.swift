@@ -14,10 +14,17 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
         didSet {
             let urlString = "https://itunes.apple.com/lookup?id=\(appId ?? "")"
             Service.shared.fetchGenericJSONData(urlString: urlString) { (resutl: SearchResult?, err) in
+                let app = resutl?.results.first
+                self.app = app
                 
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
+    
+    var app: Result?
     
     private let cellId = "cellId"
     
@@ -34,11 +41,17 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppDetailsCell
+        cell.app = app
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 300)
+        // calculate size for cell
+        let dummyCell = AppDetailsCell(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 1000))
+        dummyCell.app = app
+        dummyCell.layoutIfNeeded()
+        let estimatedSize = dummyCell.systemLayoutSizeFitting(CGSize(width: view.frame.width, height: 1000))
+        return CGSize(width: view.frame.width, height: estimatedSize.height)
     }
     
 }
