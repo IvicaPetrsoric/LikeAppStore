@@ -40,6 +40,7 @@
 		6B11834C22777E1A0030CC30 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11834B22777E1A0030CC30 /* ReviewsController.swift */; };
 		6B11834E22777F0C0030CC30 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11834D22777F0C0030CC30 /* ReviewCell.swift */; };
 		6B11835022777F880030CC30 /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B11834F22777F880030CC30 /* ScreenshotCell.swift */; };
+		6B2D8118227DD66100EAB50D /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D8117227DD66100EAB50D /* Reviews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		6B11834B22777E1A0030CC30 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
 		6B11834D22777F0C0030CC30 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		6B11834F22777F880030CC30 /* ScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
+		6B2D8117227DD66100EAB50D /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		82CEB71A434457B0D8D53242 /* Pods_LikeAppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LikeAppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E2F0A5868E369A63F5BD5C /* Pods-LikeAppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LikeAppStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore.debug.xcconfig"; sourceTree = "<group>"; };
 		C1C2F27D9664451AA8912B1E /* Pods-LikeAppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LikeAppStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				6B11830A2274577D0030CC30 /* SearchResult.swift */,
 				6B11832E2275E98A0030CC30 /* AppGroup.swift */,
 				6B1183312275FB2C0030CC30 /* SocialApp.swift */,
+				6B2D8117227DD66100EAB50D /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				6B1183272274B5CC0030CC30 /* AppsHeaderCell.swift in Sources */,
 				6B118339227638120030CC30 /* AppDetailController.swift in Sources */,
 				6B1183252274B4E70030CC30 /* AppsHeaderHorizontalController.swift in Sources */,
+				6B2D8118227DD66100EAB50D /* Reviews.swift in Sources */,
 				6B1182FD22735BD30030CC30 /* BaseTabBarController.swift in Sources */,
 				6B11832F2275E98A0030CC30 /* AppGroup.swift in Sources */,
 				6B11831D2274ABD10030CC30 /* AppRowCell.swift in Sources */,
