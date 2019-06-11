@@ -20,6 +20,14 @@ struct Entry: Codable {
     let author: Author
     let title: Label
     let content: Label
+    
+    let rating: Label
+    
+    // custom key
+    private enum CodingKeys: String, CodingKey {
+        case author, title, content
+        case rating = "im:rating"
+    }
 }
 
 struct Author: Codable {
