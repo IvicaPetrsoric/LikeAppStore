@@ -30,14 +30,16 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         return cell
     }
     
-    var startingFrame: CGRect?
+    private var startingFrame: CGRect?
+    private var appFullscreenController: UIViewController!
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let redView = UIView()
-        redView.backgroundColor = .red
+        appFullscreenController = AppFullScreenController()
+        let redView = appFullscreenController.view!
         redView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
         
         view.addSubview(redView)
+        addChild(appFullscreenController)
         
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         
@@ -50,14 +52,17 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             redView.frame = self.view.frame
+            self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
         }, completion: nil)
     }
     
     @objc private func handleRemoveRedView(gesture: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             gesture.view?.frame = self.startingFrame ?? .zero
+            self.tabBarController?.tabBar.transform = .identity
         }, completion: { _ in
             gesture.view?.removeFromSuperview()
+            self.appFullscreenController.removeFromParent()
         })
     }
     
