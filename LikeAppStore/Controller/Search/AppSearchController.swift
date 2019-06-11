@@ -37,6 +37,7 @@ class AppSearchController: BaseListController, UICollectionViewDelegateFlowLayou
         enterSearchTermLabel.centerXInSuperview()
 
         setupSearchBar()
+//        fetchITunesApps()
     }
     
     private func setupSearchBar() {
@@ -50,7 +51,9 @@ class AppSearchController: BaseListController, UICollectionViewDelegateFlowLayou
     var timer: Timer?
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Search text: ", searchText)
         timer?.invalidate()
+        
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
             Service.shared.fetchApps(searchTerm: searchText) { (res, err) in
                 if let err = err {
@@ -89,6 +92,12 @@ class AppSearchController: BaseListController, UICollectionViewDelegateFlowLayou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
         cell.appResult = appResults[indexPath.item]
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appId = String(appResults[indexPath.item].trackId)
+        let appDetailsController = AppDetailController(appId: appId)
+        navigationController?.pushViewController(appDetailsController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
