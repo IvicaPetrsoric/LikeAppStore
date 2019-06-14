@@ -21,10 +21,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
                   description: "Find out all you need to know on how to travel without packing everything!",
                   bacgrkoundColor: #colorLiteral(red: 0.9789804816, green: 0.9736877084, blue: 0.7382865548, alpha: 1), cellType: .single),
     ]
-    
-//    private let cellId = "cellId"
-//    private let mutlipleAppCellId = "mutlipleAppCellId"
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
