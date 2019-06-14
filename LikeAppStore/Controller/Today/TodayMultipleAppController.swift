@@ -10,7 +10,7 @@ import UIKit
 
 class TodayMultipleAppController: BaseListController, UICollectionViewDelegateFlowLayout {
     
-    var results = [FeedResult]()
+    var apps = [FeedResult]()
     
     private let cellId = "cellId"
     
@@ -42,6 +42,7 @@ class TodayMultipleAppController: BaseListController, UICollectionViewDelegateFl
         
         if mode == .fullScreen {
             setupCloseButton()
+            navigationController?.isNavigationBarHidden = true
         } else {
             collectionView.isScrollEnabled = false
         }
@@ -68,16 +69,22 @@ class TodayMultipleAppController: BaseListController, UICollectionViewDelegateFl
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if mode == .fullScreen {
-            return results.count
+            return apps.count
         }
         
-        return min(4,results.count)
+        return min(4,apps.count)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MultipleAppCell
-        cell.app = results[indexPath.item]
+        cell.app = apps[indexPath.item]
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appId = self.apps[indexPath.item].id
+        let appDetailsController = AppDetailController(appId: appId)
+        navigationController?.pushViewController(appDetailsController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
