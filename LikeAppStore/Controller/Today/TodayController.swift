@@ -60,6 +60,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         addChild(appFullscreenController)
         
         self.appFullscreenController = appFullscreenController
+        self.collectionView.isUserInteractionEnabled = false
         
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         
@@ -90,6 +91,10 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
             self.view.layoutIfNeeded()
             
             self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
+            
+            guard let cell = self.appFullscreenController.tableView.cellForRow(at: [0, 0]) as? AppFullscreenHeaderCell else { return }
+            cell.todayCell.topConstraint.constant = 48
+            cell.layoutIfNeeded()
         }, completion: nil)
     }
     
@@ -107,9 +112,14 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
             self.view.layoutIfNeeded()
 
             self.tabBarController?.tabBar.transform = .identity
+            
+            guard let cell = self.appFullscreenController.tableView.cellForRow(at: [0, 0]) as? AppFullscreenHeaderCell else { return }
+            cell.todayCell.topConstraint.constant = 24
+            cell.layoutIfNeeded()
         }, completion: { _ in
             self.appFullscreenController.view?.removeFromSuperview()
             self.appFullscreenController.removeFromParent()
+            self.collectionView.isUserInteractionEnabled = true
         })
     }
     
