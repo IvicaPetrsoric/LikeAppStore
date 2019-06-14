@@ -16,5 +16,11 @@ struct TodayItem {
     let description: String
     let bacgrkoundColor: UIColor
     
+    let cellType: CellType
+    
+    enum CellType: String {
+        case single, multiple
+    }
+    
 }
 
