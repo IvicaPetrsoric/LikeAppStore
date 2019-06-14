@@ -10,26 +10,82 @@ import UIKit
 
 class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
-    let items = [
-        TodayItem(category: "THE DAILY LIST", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"),
-                  description: "All the tools and apps you need to intelligently organize your life the right way.",
-                  bacgrkoundColor: .white, cellType: .multiple),
-        TodayItem(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"),
-                  description: "All the tools and apps you need to intelligently organize your life the right way.",
-                  bacgrkoundColor: .white, cellType: .single),
-        TodayItem(category: "Holidays", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"),
-                  description: "Find out all you need to know on how to travel without packing everything!",
-                  bacgrkoundColor: #colorLiteral(red: 0.9789804816, green: 0.9736877084, blue: 0.7382865548, alpha: 1), cellType: .single),
-    ]
+//    let items = [
+//        TodayItem(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"),
+//                  description: "All the tools and apps you need to intelligently organize your life the right way.",
+//                  bacgrkoundColor: .white, cellType: .single),
+//        TodayItem(category: "Second Cell", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"),
+//                  description: "All the tools and apps you need to intelligently organize your life the right way.",
+//                  bacgrkoundColor: .white, cellType: .multiple),
+//        TodayItem(category: "Holidays", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"),
+//                  description: "Find out all you need to know on how to travel without packing everything!",
+//                  bacgrkoundColor: #colorLiteral(red: 0.9789804816, green: 0.9736877084, blue: 0.7382865548, alpha: 1), cellType: .single),
+//        TodayItem(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"),
+//                  description: "All the tools and apps you need to intelligently organize your life the right way.",
+//                  bacgrkoundColor: .white, cellType: .multiple),
+//    ]
+    
+    var items = [TodayItem]()
+    
+    var asctivityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: .whiteLarge)
+        aiv.color = .darkGray
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(asctivityIndicatorView)
+        asctivityIndicatorView.centerInSuperview()
+        
+        fetchData()
         
         collectionView.backgroundColor = #colorLiteral(red: 0.9520952106, green: 0.9459629655, blue: 0.9522011876, alpha: 1)
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayItem.CellType.single.rawValue)
         collectionView.register(TodayMultipleAppCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
         
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    private func fetchData() {
+        let dispatchGroup = DispatchGroup()
+        var topGrossingGroup: AppGroup?
+        var gamesGroup: AppGroup?
+        
+        dispatchGroup.enter()
+        Service.shared.fetchTopGrossing { (appGroup, err) in
+            topGrossingGroup = appGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        Service.shared.fetchGames { (appGroup, err) in
+            gamesGroup = appGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            print("Finished fetching")
+            
+            self.asctivityIndicatorView.stopAnimating()
+            
+            self.items = [
+                TodayItem(category: "First Cell", title: topGrossingGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"),
+                          description: "1. All the tools and apps you need to intelligently organize your life the right way.",
+                          bacgrkoundColor: .white, cellType: .multiple, apps: topGrossingGroup?.feed.results ?? []),
+                TodayItem(category: "Second Cell", title: gamesGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"),
+                          description: "2. All the tools and apps you need to intelligently organize your life the right way.",
+                          bacgrkoundColor: .white, cellType: .multiple, apps: gamesGroup?.feed.results ?? []),
+                TodayItem(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"),
+                          description: "All the tools and apps you need to intelligently organize your life the right way.",
+                          bacgrkoundColor: .white, cellType: .single, apps: [])
+            ]
+            
+            self.collectionView.reloadData()
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
