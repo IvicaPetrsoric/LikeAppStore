@@ -81,7 +81,10 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
                           bacgrkoundColor: .white, cellType: .multiple, apps: gamesGroup?.feed.results ?? []),
                 TodayItem(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"),
                           description: "All the tools and apps you need to intelligently organize your life the right way.",
-                          bacgrkoundColor: .white, cellType: .single, apps: [])
+                          bacgrkoundColor: .white, cellType: .single, apps: []),
+                TodayItem(category: "Holidays", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"),
+                          description: "Find out all you need to know on how to travel without packing everything!",
+                          bacgrkoundColor: #colorLiteral(red: 0.9789804816, green: 0.9736877084, blue: 0.7382865548, alpha: 1), cellType: .single, apps: []),
             ]
             
             self.collectionView.reloadData()
@@ -109,6 +112,13 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     private var heightConstraint: NSLayoutConstraint?
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if items[indexPath.item].cellType == .multiple {
+            let fullController = TodayMultipleAppController(mode: .fullScreen)
+            fullController.results = items[indexPath.item].apps
+            present(fullController, animated: true)
+            return
+        }
+        
         let appFullscreenController = AppFullScreenController()
         appFullscreenController.todayItem = items[indexPath.item]
         appFullscreenController.dismissHandler = {
