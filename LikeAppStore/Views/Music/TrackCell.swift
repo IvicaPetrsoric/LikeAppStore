@@ -10,6 +10,14 @@ import UIKit
 
 class TrackCell: UICollectionViewCell {
     
+    var track: Result! {
+        didSet {
+            imageView.sd_setImage(with: URL(string: track.artworkUrl100))
+            nameLabel.text = track.trackName
+            substitleLabel.text = "\(track.artistName ?? "") • \(track.collectionName ?? "")"
+        }
+    }
+    
     let imageView = UIImageView(cornerRadius: 16)
     let nameLabel = UILabel(text: "Track Name", font: .boldSystemFont(ofSize: 18))
     let substitleLabel = UILabel(text: "Substitle Label", font: .systemFont(ofSize: 16), numberOfLines: 2)

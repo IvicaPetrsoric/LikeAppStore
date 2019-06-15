@@ -16,8 +16,8 @@ class MusicLoadigFooter: UICollectionViewCell {
         let aiv = UIActivityIndicatorView(style: .whiteLarge)
         aiv.color = .darkGray
         aiv.startAnimating()
-        
-        let label = UILabel(text: "Loading more...", font: .systemFont(ofSize: 16))
+
+        let label = UILabel(text: "Loading more...", font: .systemFont(ofSize: 14))
         label.textAlignment = .center
         
         let stackView = VerticalStackView(arrangedSubviews: [
@@ -26,6 +26,7 @@ class MusicLoadigFooter: UICollectionViewCell {
         
         addSubview(stackView)
         stackView.centerInSuperview(size: .init(width: 200, height: 0))
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
