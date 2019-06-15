@@ -52,6 +52,9 @@
 		6BE092AA22B43F6C00F4FF2A /* TodayMultipleAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE092A922B43F6C00F4FF2A /* TodayMultipleAppController.swift */; };
 		6BE092AC22B43FDA00F4FF2A /* MultipleAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE092AB22B43FDA00F4FF2A /* MultipleAppCell.swift */; };
 		6BE092AE22B4546C00F4FF2A /* BackEnabledNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE092AD22B4546C00F4FF2A /* BackEnabledNavigationController.swift */; };
+		6BE092B122B5431A00F4FF2A /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE092B022B5431A00F4FF2A /* MusicController.swift */; };
+		6BE092B422B5439700F4FF2A /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE092B322B5439700F4FF2A /* TrackCell.swift */; };
+		6BE092B622B5458900F4FF2A /* MusicLoadigFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE092B522B5458900F4FF2A /* MusicLoadigFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +104,9 @@
 		6BE092A922B43F6C00F4FF2A /* TodayMultipleAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMultipleAppController.swift; sourceTree = "<group>"; };
 		6BE092AB22B43FDA00F4FF2A /* MultipleAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAppCell.swift; sourceTree = "<group>"; };
 		6BE092AD22B4546C00F4FF2A /* BackEnabledNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackEnabledNavigationController.swift; sourceTree = "<group>"; };
+		6BE092B022B5431A00F4FF2A /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		6BE092B322B5439700F4FF2A /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		6BE092B522B5458900F4FF2A /* MusicLoadigFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLoadigFooter.swift; sourceTree = "<group>"; };
 		82CEB71A434457B0D8D53242 /* Pods_LikeAppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LikeAppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E2F0A5868E369A63F5BD5C /* Pods-LikeAppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LikeAppStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore.debug.xcconfig"; sourceTree = "<group>"; };
 		C1C2F27D9664451AA8912B1E /* Pods-LikeAppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LikeAppStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-LikeAppStore/Pods-LikeAppStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,11 +178,11 @@
 		6B11830022736BEC0030CC30 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6BE092AF22B5430E00F4FF2A /* Music */,
 				6BCE31F722B0192B00289C54 /* Today */,
 				6B11830F22749F6B0030CC30 /* Apps */,
 				6B1183142274A0A40030CC30 /* Search */,
 				6B1182FC22735BD30030CC30 /* BaseTabBarController.swift */,
-				6B1183152274A0BF0030CC30 /* BaseListController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 		6B118301227379C00030CC30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6BE092B222B5438B00F4FF2A /* Music */,
 				6BCE31FA22B019C700289C54 /* Today */,
 				6B1183172274A17F0030CC30 /* Apps */,
 				6B1183302275F38C0030CC30 /* Search */,
@@ -194,6 +201,7 @@
 		6B11830622737E520030CC30 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6B1183152274A0BF0030CC30 /* BaseListController.swift */,
 				6B11830422737E460030CC30 /* UIView+Layout.swift */,
 				6B118307227382960030CC30 /* VerticalStackView.swift */,
 				6B11831E2274AC530030CC30 /* Extensions.swift */,
@@ -306,6 +314,23 @@
 				6BE092AB22B43FDA00F4FF2A /* MultipleAppCell.swift */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		6BE092AF22B5430E00F4FF2A /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				6BE092B022B5431A00F4FF2A /* MusicController.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		6BE092B222B5438B00F4FF2A /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				6BE092B322B5439700F4FF2A /* TrackCell.swift */,
+				6BE092B522B5458900F4FF2A /* MusicLoadigFooter.swift */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		7D0E5D578D0BA010047483C9 /* Pods */ = {
@@ -448,6 +473,7 @@
 				6B118334227630090030CC30 /* HorizontalSnappingController.swift in Sources */,
 				6B11830E22745B700030CC30 /* Service.swift in Sources */,
 				6B11830B2274577D0030CC30 /* SearchResult.swift in Sources */,
+				6BE092B122B5431A00F4FF2A /* MusicController.swift in Sources */,
 				6BCE320022B051EC00289C54 /* AppFullScreenDescriptionCell.swift in Sources */,
 				6BCE31FC22B019D200289C54 /* TodayCell.swift in Sources */,
 				6BE092AC22B43FDA00F4FF2A /* MultipleAppCell.swift in Sources */,
@@ -470,12 +496,14 @@
 				6B11831D2274ABD10030CC30 /* AppRowCell.swift in Sources */,
 				6B11835022777F880030CC30 /* ScreenshotCell.swift in Sources */,
 				6B11830522737E460030CC30 /* UIView+Layout.swift in Sources */,
+				6BE092B622B5458900F4FF2A /* MusicLoadigFooter.swift in Sources */,
 				6BE0927F22B058AD00F4FF2A /* AppFullscreenHeaderCell.swift in Sources */,
 				6BE092AA22B43F6C00F4FF2A /* TodayMultipleAppController.swift in Sources */,
 				6BE092A822B40DC700F4FF2A /* BaseTodayCell.swift in Sources */,
 				6B11831B2274A3640030CC30 /* AppsHorizontalController.swift in Sources */,
 				6B11834A22777CCE0030CC30 /* ReviewRowCell.swift in Sources */,
 				6BCE31FE22B04F8500289C54 /* AppFullScreenController.swift in Sources */,
+				6BE092B422B5439700F4FF2A /* TrackCell.swift in Sources */,
 				6B11831F2274AC530030CC30 /* Extensions.swift in Sources */,
 				6BE092A622B4090300F4FF2A /* TodayMultipleAppCell.swift in Sources */,
 			);
