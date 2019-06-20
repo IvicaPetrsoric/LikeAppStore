@@ -18,9 +18,9 @@ class TrackCell: UICollectionViewCell {
         }
     }
     
-    let imageView = UIImageView(cornerRadius: 16)
-    let nameLabel = UILabel(text: "Track Name", font: .boldSystemFont(ofSize: 18))
-    let substitleLabel = UILabel(text: "Substitle Label", font: .systemFont(ofSize: 16), numberOfLines: 2)
+    private let imageView = UIImageView(cornerRadius: 16)
+    private let nameLabel = UILabel(text: "Track Name", font: .boldSystemFont(ofSize: 18))
+    private let substitleLabel = UILabel(text: "Substitle Label", font: .systemFont(ofSize: 16), numberOfLines: 2)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

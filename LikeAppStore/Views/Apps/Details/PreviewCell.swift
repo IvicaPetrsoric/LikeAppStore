@@ -10,9 +10,10 @@ import UIKit
 
 class PreviewCell: UICollectionViewCell {
     
-    let previewLabel = UILabel(text: "Preview", font: .boldSystemFont(ofSize: 20))
     let horizontalController = PreviewScreenshotsController()
-    let borderView = UIView()
+    
+    private let previewLabel = UILabel(text: "Preview", font: .boldSystemFont(ofSize: 20))
+    private let borderView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

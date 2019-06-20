@@ -48,7 +48,7 @@ class AppSearchController: BaseListController, UICollectionViewDelegateFlowLayou
         searchController.searchBar.delegate = self
     }
     
-    var timer: Timer?
+    private var timer: Timer?
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("Search text: ", searchText)

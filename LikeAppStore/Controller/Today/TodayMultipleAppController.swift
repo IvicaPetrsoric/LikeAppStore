@@ -16,6 +16,8 @@ class TodayMultipleAppController: BaseListController, UICollectionViewDelegateFl
     
     private let mode: Mode
     
+    private let spacing: CGFloat = 16
+    
     enum Mode {
         case small, fullScreen
     }
@@ -92,8 +94,6 @@ class TodayMultipleAppController: BaseListController, UICollectionViewDelegateFl
         let width: CGFloat = mode == .fullScreen ? view.frame.width - 48 : view.frame.width
         return .init(width: width, height: height)
     }
-    
-    private let spacing: CGFloat = 16
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return spacing

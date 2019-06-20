@@ -10,9 +10,9 @@ import UIKit
 
 class TodayController: BaseListController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
 
-    var items = [TodayItem]()
+    private var items = [TodayItem]()
     
-    var asctivityIndicatorView: UIActivityIndicatorView = {
+    private var asctivityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(style: .whiteLarge)
         aiv.color = .darkGray
         aiv.startAnimating()

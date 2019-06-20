@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MusicLoadigFooter: UICollectionViewCell {
+class MusicLoadigFooter: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +23,7 @@ class MusicLoadigFooter: UICollectionViewCell {
         let stackView = VerticalStackView(arrangedSubviews: [
             aiv, label
             ], spacing: 8)
+        stackView.alignment = .center
         
         addSubview(stackView)
         stackView.centerInSuperview(size: .init(width: 200, height: 0))

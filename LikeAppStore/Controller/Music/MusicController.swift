@@ -38,6 +38,7 @@ class MusicController: BaseListController, UICollectionViewDelegateFlowLayout{
                 print("Failed to paginate data", err)
             }
             
+            // testing paggination footer cell
             sleep(2)
             
             if searchResult?.results.count == 0 {

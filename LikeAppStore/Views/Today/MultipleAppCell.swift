@@ -19,14 +19,14 @@ class MultipleAppCell: UICollectionViewCell {
         }
     }
     
-    let imageView = UIImageView(cornerRadius: 8)
+    private let imageView = UIImageView(cornerRadius: 8)
     
-    let nameLabel = UILabel(text: "App name", font: .systemFont(ofSize: 16))
-    let companyLabel = UILabel(text: "Company name", font: .systemFont(ofSize: 13))
+    private let nameLabel = UILabel(text: "App name", font: .systemFont(ofSize: 16))
+    private let companyLabel = UILabel(text: "Company name", font: .systemFont(ofSize: 13))
     
-    let getButton = UIButton(title: "GET")
+    private let getButton = UIButton(title: "GET")
     
-    let separatorView: UIView = {
+    private let separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0.3, alpha: 0.3)
         return view
@@ -67,6 +67,5 @@ class MultipleAppCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
 }

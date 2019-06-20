@@ -10,7 +10,7 @@ import UIKit
 
 class AppFullScreenDescriptionCell: UITableViewCell {
     
-    let dexcriptionLabel: UILabel = {
+    private let dexcriptionLabel: UILabel = {
         let label = UILabel()
         let attributedText = NSMutableAttributedString(string: "Great games", attributes: [.foregroundColor: UIColor.black])
         

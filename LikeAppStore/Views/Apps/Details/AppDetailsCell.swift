@@ -19,11 +19,13 @@ class AppDetailsCell: UICollectionViewCell {
         }
     }
     
-    let appIconImageView = UIImageView(cornerRadius: 16)
-    let nameLabel = UILabel(text: "App name", font: .boldSystemFont(ofSize: 24), numberOfLines: 2)
-    let priceButton = UIButton(title: "$4.99")
-    let whatsNewLabel = UILabel(text: "What's new", font: .boldSystemFont(ofSize: 20))
-    let releaseNotesLabel = UILabel(text: "Release notes", font: .systemFont(ofSize: 18), numberOfLines: 0)
+    private let appIconImageView = UIImageView(cornerRadius: 16)
+
+    private let priceButton = UIButton(title: "$4.99")
+
+    private let nameLabel = UILabel(text: "App name", font: .boldSystemFont(ofSize: 24), numberOfLines: 2)
+    private let whatsNewLabel = UILabel(text: "What's new", font: .boldSystemFont(ofSize: 20))
+    private let releaseNotesLabel = UILabel(text: "Release notes", font: .systemFont(ofSize: 18), numberOfLines: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,13 +62,4 @@ class AppDetailsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-}
-
-extension UIStackView {
-    
-    convenience init(arrangedSubviews: [UIView], customSpacing: CGFloat = 0) {
-        self.init(arrangedSubviews: arrangedSubviews)
-        self.spacing = customSpacing
-    }
-    
 }

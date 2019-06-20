@@ -35,7 +35,7 @@ class SearchResultCell: UICollectionViewCell {
         }
     }
     
-    let appIconImageView: UIImageView = {
+    private let appIconImageView: UIImageView = {
         let iv = UIImageView()
         iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
         iv.heightAnchor.constraint(equalToConstant: 64).isActive = true
@@ -44,25 +44,25 @@ class SearchResultCell: UICollectionViewCell {
         return iv
     }()
     
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "App name"
         return label
     }()
     
-    let categoryLabel: UILabel = {
+    private let categoryLabel: UILabel = {
         let label = UILabel()
         label.text = "Photos & videos"
         return label
     }()
     
-    let ratingLabel: UILabel = {
+    private let ratingLabel: UILabel = {
         let label = UILabel()
         label.text = "9.26M"
         return label
     }()
     
-    let getButton: UIButton = {
+    private let getButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("GET", for: .normal)
         button.setTitleColor(.blue, for: .normal)
@@ -74,11 +74,11 @@ class SearchResultCell: UICollectionViewCell {
         return button
     }()
     
-    lazy var screenshot1ImageView = self.createScreenshotImageView()
-    lazy var screenshot2ImageView = self.createScreenshotImageView()
-    lazy var screenshot3ImageView = self.createScreenshotImageView()
+    private lazy var screenshot1ImageView = self.createScreenshotImageView()
+    private lazy var screenshot2ImageView = self.createScreenshotImageView()
+    private lazy var screenshot3ImageView = self.createScreenshotImageView()
 
-    func createScreenshotImageView() -> UIImageView {
+    private func createScreenshotImageView() -> UIImageView {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
